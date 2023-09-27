@@ -7,7 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   background-image: url("./pizza.jpg");
-  background-size: 100%;
+  background-repeat: repeat-x;
+  width: 100%;
+  background-size: 45%; 
   color: white;
   margin-top: 50px;
 }

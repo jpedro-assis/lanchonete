@@ -215,7 +215,7 @@ function App() {
           {pagamento === 'Dinheiro' && (
             <div onChange={(e) => setResultado(e.target.value)}>
               <div  onChange={(e) => setRadio(e.target.value)}>
-              <h3 className="h3">Enviar troco</h3>
+              <h3 className="h2">Enviar troco</h3>
                 <input
                   required
                   type='radio'
@@ -234,7 +234,7 @@ function App() {
               </div>
               {radio === 'Sim' && (
                 <div>
-                <p>Troco:</p>
+                <h2 className='h2'>Troco:</h2>
                   <input
                     required
                     className='troco'
