@@ -10,7 +10,6 @@ function App() {
   const [pagamento, setPagamento] = useState('');
   const [envio, setEnvio] = useState('');
   const [tel, setTel] = useState('');
-  // const [troco, setTroco] = useState('');
   const [radio, setRadio] = useState('');
   const [refri, setRefri] = useState('');
   const [total, setTotal] = useState('');
@@ -26,7 +25,7 @@ function App() {
     setResultado(resultadoSubtracao);
   };
 
-  const handlePrint = () => {
+  const useHandlePrint = () => {
     // Abre uma nova aba para impressão
     const printWindow = window.open('', '', 'width=600,height=400');
 
@@ -89,13 +88,13 @@ function App() {
 
   return (
     <main>
-      <form className='formulario' onSubmit={handlePrint}>
+      <form className='formulario' onSubmit={useHandlePrint}>
         <h2 className="h2t">Pedido!!!</h2>
         <div>
           <h2 className="h2" htmlFor="nome">Cliente:</h2>
           <input
             className='input'
-            required
+            //required
             type="text"
             id="nome"
             value={nome}
@@ -111,7 +110,7 @@ function App() {
               checked={envio === 'Entrega'}
             />Entrega
             <input
-              required
+              //required
               type="radio"
               id='retidada'
               value="Retirada"
@@ -125,7 +124,7 @@ function App() {
               <h2 className="h2">Rua:</h2>
               <input
                 className='input'
-                required
+                //required
                 type="text"
                 value={rua}
                 onChange={(e) => setRua(e.target.value)}
@@ -149,19 +148,20 @@ function App() {
               onChange={(e) => setTel(e.target.value)}
             />
           </div>
+          <label>
           <h2 className="h2" htmlFor="pedido">Pedido:</h2>
-          <input
-            required
+          <textarea
+            //required
             className='input'
-            type="text"
             id="pedido"
             value={pedido}
             onChange={(e) => setPedido(e.target.value)}
           />
+          </label>
           <div onChange={(e) => setRefri(e.target.value)}>
             <h2 className="h2">Refrigerante:</h2>
             <input
-              required
+              //required
               type="radio"
               id='Sim'
               value="Sim"
@@ -170,7 +170,7 @@ function App() {
             />
             Sim
             <input
-              required
+              //required
               type="radio"
               value="Não"
               id="Não"
@@ -182,7 +182,7 @@ function App() {
           {refri === 'Sim' && (
             <div>
               <input
-                required
+                //required
                 className='inputt'
                 type="text"
                 value={refr}
@@ -193,7 +193,7 @@ function App() {
           <h2 className="h2" htmlFor="pagamento">Metodo de Pagamento:</h2>
           <select
             className='select'
-            required
+            //required
             checked={pagamento === 'Dinheiro' || pagamento === 'Pix'}
             value={pagamento}
             onChange={(e) => setPagamento(e.target.value)}>
@@ -204,7 +204,7 @@ function App() {
           </select>
           <h2 className="h2" htmlFor="pedido">Total:</h2>
           <input
-            required
+            //required
             className='input'
             type="number"
             id="total"
@@ -217,7 +217,7 @@ function App() {
               <div  onChange={(e) => setRadio(e.target.value)}>
               <h3 className="h2">Enviar troco</h3>
                 <input
-                  required
+                  //required
                   type='radio'
                   name='test'
                   id='Sim'
@@ -236,11 +236,12 @@ function App() {
                 <div>
                 <h2 className='h2'>Troco:</h2>
                   <input
-                    required
+                    //required
                     className='troco'
                     id='troco'
                     type="number"
                     name='troco'
+                    
                     value={resultado}
                     onChange={handleValor2Change}
                   />
@@ -249,7 +250,7 @@ function App() {
             </div>
           )}
       </div>
-          <button className='btnEnviar' onClick={subtrairValores} type="submit">Imprimir</button>
+          <button className='btnEnviar' onClick={subtrairValores} type="submit" >Imprimir</button>
     </form >
     </main>
   );
